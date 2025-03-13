@@ -1,0 +1,67 @@
+package com.carros.app_carros.security.jwt;
+
+import io.github.cdimascio.dotenv.Dotenv;
+
+import java.security.Key;
+import java.util.Date;
+
+import javax.crypto.SecretKey;
+
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.UnsupportedJwtException;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.io.Decoders;
+import io.jsonwebtoken.security.Keys;
+import org.springframework.stereotype.Component;
+
+@Component
+public class JwtUtils {
+
+    Dotenv dotenv = Dotenv.configure().load();
+
+    private final String jwtSecret = dotenv.get("JWT_SECRET");
+    private final int jwtExpirationMs = 900000;
+
+    public String generateTokenFromUserDetails(UserDetails userDetails) {
+
+        return Jwts.builder()
+                .subject(userDetails.getUsername())
+                .issuedAt(new Date())
+                .expiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
+                .signWith(getSigninKey())
+                .compact();
+    }
+
+    public Key getSigninKey() {
+        SecretKey key = Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
+        return key;
+    }
+
+    public String getUsernameToken(String token) {
+        return Jwts.parser()
+                .setSigningKey(getSigninKey()) // Atualizado para parserBuilder()
+                .build()
+                .parseClaimsJws(token)
+                .getBody()
+                .getSubject();
+    }
+
+    public boolean validateJwtToken (String token) throws MalformedJwtException,  ExpiredJwtException, UnsupportedJwtException, IllegalArgumentException {
+        try{
+            Jwts.parser().setSigningKey(getSigninKey()).build().parseClaimsJws(token);
+            return true;
+        }catch (MalformedJwtException e){
+            System.out.println("Token invalido "+e.getMessage());
+        }catch(ExpiredJwtException e) {
+            System.out.println("Token expirado " + e.getMessage());
+        }catch(UnsupportedJwtException e) {
+            System.out.println("Token não suportado " + e.getMessage());
+        }catch(IllegalArgumentException e) {
+            System.out.println("Token Argumento inválido " + e.getMessage());
+        }
+        return false;
+    }
+}
