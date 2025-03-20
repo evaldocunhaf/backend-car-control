@@ -2,6 +2,8 @@ package com.carcontrol.servicos.assinaturas;
 
 import java.util.List;
 
+import com.carcontrol.persistencia.entidades.Carro;
+
 public interface CarroService {
 
     public Carro buscarCarroPorPlaca(String placa);

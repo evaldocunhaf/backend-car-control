@@ -1,4 +1,4 @@
-package com.carros.app_carros.entidades.auth;
+package com.carcontrol.apresentacao.security.auth;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

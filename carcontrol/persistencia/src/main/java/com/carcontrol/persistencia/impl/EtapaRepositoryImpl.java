@@ -1,8 +1,9 @@
-package com.carcontrol.persistencia.mapper;
+package com.carcontrol.persistencia.impl;
 
-import com.carros.app_carros.entidades.etapa.Etapa;
-import com.carros.app_carros.entidades.etapa.EtapaRepository;
-import com.carros.app_carros.entidades.etapa.mapper.EtapaMapper;
+import com.carcontrol.persistencia.assinaturas.EtapaRepository;
+import com.carcontrol.persistencia.entidades.Etapa;
+import com.carcontrol.persistencia.mapper.EtapaMapper;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 

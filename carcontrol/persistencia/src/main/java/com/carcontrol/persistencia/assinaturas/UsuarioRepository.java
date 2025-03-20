@@ -1,5 +1,7 @@
 package com.carcontrol.persistencia.assinaturas;
 
+import com.carcontrol.persistencia.entidades.Usuario;
+
 public interface UsuarioRepository {
 
     void salvarUsuario(Usuario usuario);

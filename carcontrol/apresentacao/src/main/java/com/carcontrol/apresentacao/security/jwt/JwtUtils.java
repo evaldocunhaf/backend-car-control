@@ -1,4 +1,4 @@
-package com.carros.app_carros.security.jwt;
+package com.carcontrol.apresentacao.security.jwt;
 
 import io.github.cdimascio.dotenv.Dotenv;
 

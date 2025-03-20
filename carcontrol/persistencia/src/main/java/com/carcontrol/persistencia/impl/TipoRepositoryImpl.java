@@ -1,8 +1,9 @@
 package com.carcontrol.persistencia.impl;
 
-import com.carros.app_carros.entidades.tipo.Tipo;
-import com.carros.app_carros.entidades.tipo.TipoRepository;
-import com.carros.app_carros.entidades.tipo.mapper.TipoMapper;
+import com.carcontrol.persistencia.entidades.Tipo;
+import com.carcontrol.persistencia.assinaturas.TipoRepository;
+import com.carcontrol.persistencia.mapper.TipoMapper;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 

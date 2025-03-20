@@ -1,9 +1,15 @@
-package com.carros.app_carros;
+package com.carcontrol.apresentacao;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
+@ComponentScan(basePackages = {
+		"com.carcontrol.apresentacao",
+		"com.carcontrol.servicos",
+		"com.carcontrol.persistencia"
+})
 public class AppCarrosApplication {
 
 	public static void main(String[] args) {

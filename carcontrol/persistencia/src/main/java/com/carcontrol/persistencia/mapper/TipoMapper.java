@@ -1,6 +1,6 @@
 package com.carcontrol.persistencia.mapper;
 
-import com.carros.app_carros.entidades.tipo.Tipo;
+import com.carcontrol.persistencia.entidades.Tipo;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

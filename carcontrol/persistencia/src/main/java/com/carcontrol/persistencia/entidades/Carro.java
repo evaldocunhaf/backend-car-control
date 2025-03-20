@@ -2,8 +2,8 @@ package com.carcontrol.persistencia.entidades;
 
 import java.sql.Blob;
 
-import com.carros.app_carros.entidades.etapa.Etapa;
-import com.carros.app_carros.entidades.usuario.Usuario;
+import com.carcontrol.persistencia.entidades.Etapa;
+import com.carcontrol.persistencia.entidades.Usuario;
 
 public class Carro {
     private String placa;

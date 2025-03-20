@@ -1,4 +1,4 @@
-package com.carros.app_carros.entidades.auth;
+package com.carcontrol.apresentacao.security.auth;
 
 public class AuthDTO {
     private String username;

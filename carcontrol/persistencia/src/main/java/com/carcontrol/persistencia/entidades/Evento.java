@@ -1,7 +1,8 @@
 package com.carcontrol.persistencia.entidades;
 
-import com.carros.app_carros.entidades.carro.Carro;
-import com.carros.app_carros.entidades.etapa.Etapa;
+import com.carcontrol.persistencia.entidades.Etapa;
+import com.carcontrol.persistencia.entidades.Carro;
+import com.carcontrol.persistencia.entidades.Tipo;
 
 import java.util.Date;
 

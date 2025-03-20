@@ -1,8 +1,9 @@
 package com.carcontrol.servicos.impl;
 
-import com.carros.app_carros.entidades.etapa.Etapa;
-import com.carros.app_carros.entidades.etapa.EtapaRepository;
-import com.carros.app_carros.entidades.etapa.EtapaService;
+import com.carcontrol.persistencia.entidades.Etapa;
+import com.carcontrol.persistencia.assinaturas.EtapaRepository;
+
+import com.carcontrol.servicos.assinaturas.EtapaService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

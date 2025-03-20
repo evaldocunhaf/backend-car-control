@@ -1,4 +1,4 @@
-package com.carros.app_carros.entidades.userdetail;
+package com.carcontrol.apresentacao.security.userdetail;
 
 import com.carros.app_carros.entidades.usuario.Usuario;
 import org.springframework.security.core.GrantedAuthority;

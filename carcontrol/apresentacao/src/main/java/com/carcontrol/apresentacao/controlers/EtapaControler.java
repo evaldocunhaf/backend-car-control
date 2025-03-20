@@ -1,4 +1,7 @@
-package com.carros.app_carros.controlers;
+package com.carcontrol.apresentacao.controlers;
+
+import com.carcontrol.persistencia.entidades.Etapa;
+import com.carcontrol.servicos.assinaturas.EtapaService;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +20,7 @@ public class EtapaControler {
     public EtapaControler(EtapaService etapaService) {
         this.etapaService = etapaService;
     }
+
     @GetMapping()
     ResponseEntity<List<Etapa>> listarEtapas() {
         return ResponseEntity.ok(etapaService.listarEtapas());

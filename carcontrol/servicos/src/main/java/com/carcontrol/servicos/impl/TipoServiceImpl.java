@@ -1,8 +1,9 @@
 package com.carcontrol.servicos.impl;
 
-import com.carros.app_carros.entidades.tipo.Tipo;
-import com.carros.app_carros.entidades.tipo.TipoRepository;
-import com.carros.app_carros.entidades.tipo.TipoService;
+import com.carcontrol.persistencia.entidades.Tipo;
+import com.carcontrol.persistencia.assinaturas.TipoRepository;
+import com.carcontrol.servicos.assinaturas.TipoService;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
