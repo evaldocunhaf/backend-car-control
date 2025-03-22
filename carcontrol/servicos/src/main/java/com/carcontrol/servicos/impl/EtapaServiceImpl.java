@@ -1,7 +1,7 @@
 package com.carcontrol.servicos.impl;
 
 import com.carcontrol.persistencia.entidades.Etapa;
-import com.carcontrol.persistencia.assinaturas.EtapaRepository;
+import com.carcontrol.persistencia.repositorios.EtapaRepository;
 
 import com.carcontrol.servicos.assinaturas.EtapaService;
 import org.springframework.stereotype.Service;
@@ -19,11 +19,11 @@ public class EtapaServiceImpl implements EtapaService {
 
     @Override
     public List<Etapa> listarEtapas() {
-        return etapaRepository.listarEtapas();
+        return etapaRepository.findAll();
     }
 
     @Override
     public Etapa buscarEtapaPorId(Integer id) {
-        return etapaRepository.buscarEtapaPorId(id);
+        return etapaRepository.findById(id).orElse(null);
     }
 }

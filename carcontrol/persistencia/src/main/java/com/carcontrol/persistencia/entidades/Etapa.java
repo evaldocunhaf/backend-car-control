@@ -1,6 +1,11 @@
 package com.carcontrol.persistencia.entidades;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Etapa {
+    @Id
     private Long id;
     private String titulo;
     private String descricao;
@@ -9,6 +14,9 @@ public class Etapa {
         this.id = id;
         this.titulo = titulo;
         this.descricao = descricao;
+    }
+
+    public Etapa() {
     }
 
     public Long getId() {

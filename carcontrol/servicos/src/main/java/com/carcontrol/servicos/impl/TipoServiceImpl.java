@@ -1,7 +1,7 @@
 package com.carcontrol.servicos.impl;
 
 import com.carcontrol.persistencia.entidades.Tipo;
-import com.carcontrol.persistencia.assinaturas.TipoRepository;
+import com.carcontrol.persistencia.repositorios.TipoRepository;
 import com.carcontrol.servicos.assinaturas.TipoService;
 
 import org.springframework.stereotype.Service;
@@ -19,11 +19,11 @@ public class TipoServiceImpl implements TipoService {
 
     @Override
     public List<Tipo> listarTipos() {
-        return tipoRepository.listarTipos();
+        return tipoRepository.findAll();
     }
 
     @Override
     public Tipo buscarTipoPorId(Long id) {
-        return tipoRepository.buscarTipoPorId(id);
+        return tipoRepository.findById(id).orElse(null);
     }
 }

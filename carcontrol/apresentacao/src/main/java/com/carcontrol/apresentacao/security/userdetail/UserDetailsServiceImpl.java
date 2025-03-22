@@ -1,7 +1,7 @@
 package com.carcontrol.apresentacao.security.userdetail;
 
-import com.carros.app_carros.entidades.usuario.Usuario;
-import com.carros.app_carros.entidades.usuario.UsuarioRepository;
+import com.carcontrol.persistencia.entidades.Usuario;
+import com.carcontrol.persistencia.repositorios.UsuarioRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

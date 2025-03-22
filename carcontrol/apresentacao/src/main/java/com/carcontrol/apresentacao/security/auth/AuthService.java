@@ -1,6 +1,6 @@
 package com.carcontrol.apresentacao.security.auth;
 
-import com.carros.app_carros.entidades.userdetail.UserDetailsImpl;
+import com.carcontrol.apresentacao.security.userdetail.UserDetailsImpl;
 import com.carcontrol.apresentacao.security.jwt.JwtUtils;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;

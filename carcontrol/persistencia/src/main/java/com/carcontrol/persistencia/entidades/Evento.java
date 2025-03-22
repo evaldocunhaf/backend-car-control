@@ -7,7 +7,7 @@ import com.carcontrol.persistencia.entidades.Tipo;
 import java.util.Date;
 
 public class Evento {
-    private Date data;
+    private Date data_inicio;
     private String titulo;
     private String descricao;
     private Carro carro;

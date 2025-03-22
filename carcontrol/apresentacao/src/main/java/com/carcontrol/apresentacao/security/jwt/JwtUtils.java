@@ -10,6 +10,7 @@ import javax.crypto.SecretKey;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.UnsupportedJwtException;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import io.jsonwebtoken.Jwts;
@@ -20,9 +21,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class JwtUtils {
 
-    Dotenv dotenv = Dotenv.configure().load();
-
-    private final String jwtSecret = dotenv.get("JWT_SECRET");
+    @Value("${seguranca.jwtsecret}")
+    private String jwtSecret;
     private final int jwtExpirationMs = 900000;
 
     public String generateTokenFromUserDetails(UserDetails userDetails) {

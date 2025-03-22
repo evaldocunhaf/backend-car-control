@@ -1,6 +1,6 @@
 package com.carcontrol.apresentacao.security.userdetail;
 
-import com.carros.app_carros.entidades.usuario.Usuario;
+import com.carcontrol.persistencia.entidades.Usuario;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

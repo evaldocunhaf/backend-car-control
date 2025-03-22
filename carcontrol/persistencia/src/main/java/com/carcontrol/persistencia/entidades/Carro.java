@@ -4,18 +4,30 @@ import java.sql.Blob;
 
 import com.carcontrol.persistencia.entidades.Etapa;
 import com.carcontrol.persistencia.entidades.Usuario;
+import com.carcontrol.persistencia.entidades.id.CarroId;
+import jakarta.persistence.*;
 
+@Entity
 public class Carro {
-    private String placa;
+    @EmbeddedId
+    private CarroId carroId;
     private String modelo;
     private String cor;
     private String cidade;
-    private Blob foto;
+    @Lob
+    private byte[] foto;
+    @ManyToOne
+    @MapsId("cpf")
+    @JoinColumn(name = "cpf",  insertable = false, updatable = false)
     private Usuario usuario;
+    @ManyToOne
+    @JoinColumn(name = "id")
     private Etapa etapa;
 
-    public Carro(String placa, String modelo, String cor, String cidade, Blob foto, Usuario usuario, Etapa etapa) {
-        this.placa = placa;
+    public Carro() {}
+
+    public Carro(String placa, String modelo, String cor, String cidade, byte[] foto, Usuario usuario, Etapa etapa) {
+        this.carroId = new CarroId(placa, usuario.getCpf());
         this.modelo = modelo;
         this.cor = cor;
         this.cidade = cidade;
@@ -24,12 +36,20 @@ public class Carro {
         this.etapa = etapa;
     }
 
+    public CarroId getCarroId() {
+        return carroId;
+    }
+
+    public void setCarroId(CarroId carroId) {
+        this.carroId = carroId;
+    }
+
     public String getPlaca() {
-        return placa;
+        return carroId.getPlaca();
     }
 
     public void setPlaca(String placa) {
-        this.placa = placa;
+        carroId.setPlaca(placa);
     }
 
     public String getModelo() {
@@ -56,11 +76,11 @@ public class Carro {
         this.cidade = cidade;
     }
 
-    public Blob getFoto() {
+    public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(Blob foto) {
+    public void setFoto(byte[] foto) {
         this.foto = foto;
     }
 
